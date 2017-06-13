@@ -1,0 +1,762 @@
+﻿/*通用css*/
+body { font: 12px "宋体","Arial Narrow",HELVETICA; _height: 100%; }
+
+body, div, dl, dt, dd, ul, ol, li, h1, h2, h3, h4, h5, h6, pre, form, fieldset, input, textarea, p,
+blockquote, th, td { margin: 0; padding: 0; }
+
+table { border-collapse: collapse; border-spacing: 0; }
+
+img { border: 0; }
+
+address, caption, cite, code, dfn, em, strong, th, var { font-style: normal; font-weight: normal; }
+
+ol, ul, li { list-style: none; }
+
+caption, th { text-align: left; }
+
+h1, h2, h3, h4, h5, h6 { font-size: 100%; font-weight: normal; }
+
+q:before, q:after { content: ''; }
+
+abbr, acronym { border: 0; }
+
+.clearfix:after { content: "."; display: block; height: 0; clear: both; visibility: hidden; }
+
+.clearfix { display: inline-block; }
+
+* html .clearfix { height: 1%; }
+
+.fl { float: left; }
+
+.fr { float: right; }
+
+.cb { clear: both; }
+
+.clearfix { display: block; }
+
+input, textarea { outline: none; }
+
+a { color: #333; text-decoration: none; }
+
+a:hover { text-decoration: underline; }
+
+
+/*********ui公用**********/
+
+/*公用图标(大)*/
+.xgui-msg-icon { width: 30px; height: 36px; float: left; background: url(img/icon-warn.png) no-repeat; _background: url(img/icon-warn.gif) no-repeat; }
+
+/*成功图片*/
+.icon-success { background-position: 0 0; }
+/*失败图片*/
+.icon-error { background-position: 0 -38px; }
+/*警告图标*/
+.icon-warn { background-position: 0 -76px; }
+/*问号图标*/
+.icon-ask { background-position: 0 -114px; }
+/*消息图标*/
+.icon-info { background-position: 0 -152px; }
+
+/*公用图标(中)*/
+.xgui-msg-icon2 { width: 22px; height: 26px; float: left; background: url(img/icon-warn.png) no-repeat; _background: url(img/icon-warn.gif) no-repeat; }
+
+/*成功图片*/
+.icon-success2 { background-position: -36px 0; }
+/*失败图片*/
+.icon-error2 { background-position: -36px -38px; }
+/*警告图标*/
+.icon-warn2 { background-position: -36px -76px; }
+/*问号图标*/
+.icon-ask2 { background-position: -36px -114px; }
+/*消息图标*/
+.icon-info2 { background-position: -36px -152px; }
+
+
+/*公用图标(小)*/
+.xgui-msg-icon3 { width: 16px; height: 19px; float: left; background: url(img/icon-warn.png) no-repeat; _background: url(img/icon-warn.gif) no-repeat; }
+
+/*成功图片*/
+.icon-success3 { background-position: -71px 0; }
+/*失败图片*/
+.icon-error3 { background-position: -71px -38px; }
+/*警告图标*/
+.icon-warn3 { background-position: -71px -76px; }
+/*问号图标*/
+.icon-ask3 { background-position: -71px -114px; }
+/*消息图标*/
+.icon-info3 { background-position: -71px -152px; }
+
+
+/*********线性渐变**********/
+
+/*红色渐变*/
+.line-red { color: white; _background-color: #ec2302; border: 1px solid #ec2302; /*火狐3.6以上版本浏览器*/ /*线性渐变的方向(left:从左到右渐变，top:从下到下渐变)，起始颜色一  颜色缩放度百分比，起始颜色二  颜色缩放度百分比*/ background: -moz-linear-gradient(top, #ff482f 0%, #ec2302 100%); /*适合 Chrome,Safari4+ */ background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#ff482f), color-stop(100%,#ec2302)); /*适合Chrome10+,Safari5.1+*/ background: -webkit-linear-gradient(top, #ff482f 0%,#ec2302 100%); /*适合Opera 11.10+*/ background: -o-linear-gradient(top, #ff482f 0%,#ec2302 100%); /*适合IE10+ */ background: -ms-linear-gradient(top, #ff482f 0%,#ec2302 100%); /*ie9及以下版本的IE使用背景色加滤镜实现渐变*/ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ff482f', endColorstr='#ec2302',GradientType=0 ); }
+
+.line-red:hover { color: white; _background-color: #ff482f; background: -moz-linear-gradient(top, #ff482f 0%, #ff482f 100%); background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#ff482f), color-stop(100%,#ff482f)); background: -webkit-linear-gradient(top, #ff482f 0%,#ff482f 100%); background: -o-linear-gradient(top, #ff482f 0%,#ff482f 100%); background: -ms-linear-gradient(top, #ff482f 0%,#ff482f 100%); filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ff482f', endColorstr='#ff482f',GradientType=0 ); }
+
+/*黄色渐变*/
+.line-yellow { color: white; _background-color: #ff980d; border: 1px solid #e18202; /*火狐3.6以上版本浏览器*/ /*线性渐变的方向(left:从左到右渐变，top:从下到下渐变)，起始颜色一  颜色缩放度百分比，起始颜色二  颜色缩放度百分比*/ background: -moz-linear-gradient(top, #fea328 0%, #e88601 100%); /*适合 Chrome,Safari4+ */ background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#fea328), color-stop(100%,#e88601)); /*适合Chrome10+,Safari5.1+*/ background: -webkit-linear-gradient(top, #fea328 0%,#e88601 100%); /*适合Opera 11.10+*/ background: -o-linear-gradient(top, #fea328 0%,#e88601 100%); /*适合IE10+ */ background: -ms-linear-gradient(top, #fea328 0%,#e88601 100%); /*ie9及以下版本的IE使用背景色加滤镜实现渐变*/ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#fea328', endColorstr='#e88601',GradientType=0 ); }
+
+.line-yellow:hover { color: white; _background-color: #ffa934; background: -moz-linear-gradient(top, #fea328 0%, #fea328 100%); background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#fea328), color-stop(100%,#fea328)); background: -webkit-linear-gradient(top, #fea328 0%,#fea328 100%); background: -o-linear-gradient(top, #fea328 0%,#fea328 100%); background: -ms-linear-gradient(top, #fea328 0%,#fea328 100%); filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#fea328', endColorstr='#fea328',GradientType=0 ); }
+
+/*绿色渐变*/
+.line-green { color: white; _background-color: #7db500; border: 1px solid #699702; /*火狐3.6以上版本浏览器*/ /*线性渐变的方向(left:从左到右渐变，top:从下到下渐变)，起始颜色一  颜色缩放度百分比，起始颜色二  颜色缩放度百分比*/ background: -moz-linear-gradient(top, #8fce02 0%, #7db500 100%); /*适合 Chrome,Safari4+ */ background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#8fce02), color-stop(100%,#7db500)); /*适合Chrome10+,Safari5.1+*/ background: -webkit-linear-gradient(top, #8fce02 0%,#7db500 100%); /*适合Opera 11.10+*/ background: -o-linear-gradient(top, #8fce02 0%,#7db500 100%); /*适合IE10+ */ background: -ms-linear-gradient(top, #8fce02 0%,#7db500 100%); /*ie9及以下版本的IE使用背景色加滤镜实现渐变*/ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#8fce02', endColorstr='#7db500',GradientType=0 ); }
+
+.line-green:hover { color: white; _background-color: #8fce02; background: -moz-linear-gradient(top, #8fce02 0%, #8fce02 100%); background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#8fce02), color-stop(100%,#8fce02)); background: -webkit-linear-gradient(top, #8fce02 0%,#8fce02 100%); background: -o-linear-gradient(top, #8fce02 0%,#8fce02 100%); background: -ms-linear-gradient(top, #8fce02 0%,#8fce02 100%); filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#8fce02', endColorstr='#8fce02',GradientType=0 ); }
+
+/*蓝色渐变*/
+.line-blue { color: white; _background-color: #46a3d7; border: 1px solid #4C92C8; /*火狐3.6以上版本浏览器*/ /*线性渐变的方向(left:从左到右渐变，top:从下到下渐变)，起始颜色一  颜色缩放度百分比，起始颜色二  颜色缩放度百分比*/ background: -moz-linear-gradient(top, #56bdf4 0%, #46a3d7 100%); /*适合 Chrome,Safari4+ */ background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#56bdf4), color-stop(100%,#46a3d7)); /*适合Chrome10+,Safari5.1+*/ background: -webkit-linear-gradient(top, #56bdf4 0%,#46a3d7 100%); /*适合Opera 11.10+*/ background: -o-linear-gradient(top, #56bdf4 0%,#46a3d7 100%); /*适合IE10+ */ background: -ms-linear-gradient(top, #56bdf4 0%,#46a3d7 100%); /*ie9及以下版本的IE使用背景色加滤镜实现渐变*/ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#56BDF4', endColorstr='#46A3D7',GradientType=0 ); }
+
+.line-blue:hover { color: white; _background-color: #56bdf4; background: -moz-linear-gradient(top, #56bdf4 0%, #56bdf4 100%); background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#56bdf4), color-stop(100%,#56bdf4)); background: -webkit-linear-gradient(top, #56bdf4 0%,#56bdf4 100%); background: -o-linear-gradient(top, #56bdf4 0%,#56bdf4 100%); background: -ms-linear-gradient(top, #56bdf4 0%,#56bdf4 100%); filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#56BDF4', endColorstr='#56bdf4',GradientType=0 ); }
+
+/*灰色渐变*/
+.line-grey { color: #505050; _background-color: #dadada; border: 1px solid #c5c5c5; background: -moz-linear-gradient(top,#f0eeee 0%,#dadada 100%); background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#f0eeee), color-stop(100%,#dadada)); background: -webkit-linear-gradient(top,#f0eeee 0%,#dadada 100%); background: -o-linear-gradient(top,#f0eeee 0%,#dadada 100%); background: -o-linear-gradient(top,#f0eeee 0%,#dadada 100%); background: -ms-linear-gradient(top,#f0eeee 0%,#dadada 100%); filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#f0eeee', endColorstr='#dadada',GradientType=0 ); }
+
+.line-grey:hover { color: #505050; _background-color: #f0eeee; background: -moz-linear-gradient(top, #f0eeee 0%, #f0eeee 100%); background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#f0eeee), color-stop(100%,#f0eeee)); background: -webkit-linear-gradient(top, #f0eeee 0%,#f0eeee 100%); background: -o-linear-gradient(top, #f0eeee 0%,#f0eeee 100%); background: -ms-linear-gradient(top, #f0eeee 0%,#f0eeee 100%); filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#f0eeee', endColorstr='#f0eeee',GradientType=0 ); }
+
+/*********颜色**********/
+
+/*红色*/
+.red { color: white; background-color: #ec2302; /*border: 1px solid #ec2302;*/ }
+
+.red:hover { color: white; background-color: #ff482f; }
+
+/*黄色*/
+.yellow { color: white; background-color: #ff980d; /*border: 1px solid #e18202;*/ }
+
+.yellow:hover { color: white; background-color: #ffa934; }
+
+/*绿色*/
+.green { color: white; background-color: #7db500; /*border: 1px solid #699702;*/ }
+
+.green:hover { color: white; background-color: #8fce02; }
+
+/*蓝色*/
+.blue { color: white; background-color: #46a3d7; /*border: 1px solid #4C92C8;*/ }
+
+.blue:hover { color: white; background-color: #56bdf4; }
+
+/*灰色*/
+.grey { color: #505050; background-color: #dadada; }
+
+.grey:hover { color: #505050; background-color: #f0eeee; }
+
+
+/**************按钮****************/
+
+/*工具栏通用按钮*/
+.toolbar-btn { display: inline-block; height: 24px; line-height: 24px; padding: 0 20px; border-radius: 2px; text-align: center; }
+
+.toolbar-btn:hover { text-decoration: none; }
+
+/*保存通用的按钮*/
+.save-btn { display: inline-block; height: 28px; line-height: 28px; padding: 0 30px; border-radius: 2px; text-align: center; font-size: 14px; font-weight: bold; }
+
+.save-btn:hover { text-decoration: none; }
+
+/*信息框通用的按钮*/
+.xgui-msg-btn { display: inline-block; height: 24px; line-height: 24px; padding: 0 10px; border-radius: 2px; margin-top: 6px; text-align: center; }
+
+.xgui-msg-btn:hover { text-decoration: none; }
+
+
+/*mask遮罩*/
+.xgui-mask { width: 100%; height: 100%; background-color: black; position: fixed; _position: absolute; left: 0; top: 0; filter: alpha(opacity=10); opacity: 0.1; }
+
+/*信息框*/
+.xgui-msg { background-color: white; border: 1px solid #b8b8b8; border-radius: 5px; /*阴影水平偏移值；阴影垂直偏移值；阴影模糊值；阴影颜色*/ box-shadow: 0 0 5px #acacac; }
+
+/*头部*/
+.xgui-msg-head { height: 34px; line-height: 34px; border-top-left-radius: 5px; border-top-right-radius: 5px; background-color: #569ebc; cursor: move; }
+
+.xgui-msg-tit { float: left; margin-left: 10px; display: inline; }
+
+.xgui-msg-close { float: right; font-weight: bold; color: white; margin-right: 10px; }
+
+.xgui-msg-close:hover { text-decoration: none; color: #32c1f8; }
+
+/*主体*/
+.xgui-msg-main { padding: 20px; }
+
+.xgui-msg-info { width: 240px; float: left; margin-left: 10px; display: inline; line-height: 20px; margin-top: 6px; }
+
+/*底部*/
+.xgui-msg-bottom { height: 36px; background-color: #f5f5f5; border-bottom-left-radius: 5px; border-bottom-right-radius: 5px; text-align: right; padding-right: 10px; }
+
+.msg-btn-no { margin-left: 10px; }
+
+/*alert提示框*/
+.msg-alert { width: 320px; position: absolute; }
+
+/*confirm确认框*/
+.msg-confirm { width: 320px; position: absolute; }
+
+/*msgtip提示信息*/
+.msg-msgtip { position: fixed; _position: absolute; padding: 10px 14px; }
+
+.msgtip-info { width: auto; }
+
+/*dialog对话框*/
+.xgui-dialog { display: none; }
+/*头部*/
+.xgui-dialog .xgui-msg-head { height: 36px; line-height: 36px; }
+
+.xgui-dialog .xgui-msg-tit { margin-left: 16px; font-size: 14px; color: white; }
+
+.xgui-dialog .xgui-msg-close { margin-right: 16px; font-size: 14px; }
+
+/*底部*/
+.xgui-dialog .xgui-msg-bottom { height: 36px; padding-right: 16px; }
+
+.xgui-dialog .xgui-msg-bottom .xgui-msg-btn { margin-top: 5px; height: 26px; line-height: 26px; padding: 0 16px; }
+
+
+
+/*loading*/
+.xgui-loading { height: 28px; position: fixed; _position: absolute; padding: 10px 10px 10px 50px; text-align: left; line-height: 28px; font-weight: bold; z-index: 9000; border: solid 2px #63b33b; background: white url(img/loading.gif) no-repeat 10px 10px; }
+
+
+
+/**************datagrid表格****************/
+
+.xgui-datagrid { }
+/*头部*/
+.xgui-datagrid-header, .xgui-treegrid-header { height: 26px; line-height: 26px; border: 1px solid #dcdbdb; border-bottom: none; background: url(img/xgui-datagrid-header-bg.jpg) repeat-x; }
+
+.xgui-datagrid-header-h2, .xgui-treegrid-header-h2 { margin-left: 10px; font-weight: bold; color: #333333; }
+/*行标*/
+.xgui-datagrid-cell-number { width: 60px; text-align: center; }
+
+/*复选框*/
+.xgui-datagrid-header-check,
+.xgui-datagrid-cell-check,
+.xgui-treegrid-header-check,
+.xgui-treegrid-cell-check { width: 60px; text-align: center; }
+
+.xgui-datagrid-header-check input,
+.xgui-datagrid-cell-check input,
+.xgui-treegrid-header-check input,
+.xgui-treegrid-cell-check input { vertical-align: -2px; }
+/*搜索工具栏*/
+.xgui-datagrid-searchbar, .xgui-treegrid-searchbar { background-color: #f7f5f5; background: #f4f3f3 url(img/xgui-datagrid-toolbar_bg.jpg) repeat-x left top; border: 1px solid #dcdbdb; padding: 6px 10px; margin-bottom: 1px; }
+/*工具栏*/
+.xgui-datagrid-toolbar, .xgui-treegrid-toolbar { background-color: #f7f5f5; background: #f4f3f3 url(img/xgui-datagrid-toolbar_bg.jpg) repeat-x left top; border: 1px solid #dcdbdb; border-bottom: none; padding: 6px 10px; }
+/*标题*/
+.xgui-datagrid-title, .xgui-treegrid-title { height: 34px; line-height: 34px; border: 1px solid #dcdbdb; border-bottom: none; background: url(img/xgui-datagrid-title-bg.jpg) repeat-x; }
+
+.xgui-datagrid-title .xgui-datagrid-cell, .xgui-treegrid-title .xgui-datagrid-cell { white-space: nowrap; }
+
+.xgui-datagrid-title-fix, .xgui-treegrid-title-fix { position: fixed; _position: absolute; border: 1px solid #dcdbdb; box-shadow: 0 3px 3px #dcdbdb; top: 0; }
+
+/*内容*/
+.xgui-datagrid-body, .xgui-treegrid-body { border: 1px solid #dcdbdb; }
+
+.xgui-datagrid-row { height: 34px; cursor: default; }
+
+.xgui-datagrid-row-alt { background-color: #f4f3f3; }
+
+.xgui-datagrid-row-hover { background-color: #eefcbf; }
+
+.xgui-datagrid-row-select { background-color: #d0ec6e; }
+
+.xgui-datagrid-cell { padding: 0 6px; word-break: break-all; }
+
+
+/*分页*/
+.xgui-datagrid-pager { height: 24px; background-color: #f4f3f3; border: 1px solid #dcdbdb; border-top: none; text-align: right; padding: 5px 14px; }
+
+.xgui-datagrid-pager span { margin-left: 10px; display: inline-block; height: 22px; line-height: 22px; padding: 0 10px; border: 1px solid #cacaca; background-color: white; }
+
+.xgui-datagrid-pager span a { color: #ff7200; }
+
+/*.datagrid-pager-ipt {
+    height: 16px;
+    width: 24px;
+    border: 1px solid #92cd90;
+}
+
+.datagrid-pager-btn {
+    display: inline-block;
+    text-align: center;
+    height: 16px;
+    line-height: 16px;
+    width: 24px;
+    border: 1px solid #92cd90;
+    background-color: #defcde;
+    margin-right: 20px;
+}
+
+    .datagrid-pager-btn:hover {
+        text-decoration: none;
+    }*/
+
+
+/**************右键菜单menu****************/
+.xgui-menu { width: 114px; border: 1px solid #d4d4d4; background-color: #f3f3f3; position: absolute; box-shadow: 2px 2px 2px #e6e5e5; border-radius: 2px; padding: 6px; z-index: 500; display: none; }
+
+.xgui-menu-item { height: 28px; line-height: 28px; border: 1px solid transparent; padding-left: 20px; }
+
+.xgui-menu-hover { background-color: #eefcbf; border: 1px solid #d0ec6e; border-radius: 4px; cursor: pointer; }
+
+
+/**************treegrid表格样式****************/
+
+/*公用图标*/
+/*三角图标*/
+.tree-hit,
+/*文件夹图标*/
+.tree-folder { display: inline-block; width: 16px; height: 18px; vertical-align: middle; background: url('img/TreeIcons.png') no-repeat; }
+/*treegrid数据表格*/
+.xgui-treegrid { }
+/*行*/
+.xgui-treegrid-row { height: 34px; cursor: default; }
+/*hover样式*/
+.xgui-treegrid-row-hover { background-color: #eefcbf; }
+/*选中样式*/
+.xgui-treegrid-row-select { background-color: #d0ec6e; }
+
+.xgui-treegrid-cell { padding: 0 6px; word-break: break-all; }
+
+/*td*/
+.xgui-treegrid-row td { border-bottom: 1px solid #ededed; height: 26px; }
+
+/*三角图标*/
+.tree-hit { cursor: pointer; }
+/*树标题*/
+.tree-title { vertical-align: middle; padding: 1px 0 1px 2px; }
+/*展开不发光*/
+.tree-expanded { background-position: -11px 3px; }
+
+/*折叠不发光*/
+.tree-collapsed { background-position: 5px 3px; }
+
+/*文件夹关闭*/
+.tree-folder-close { background-position: 0px -18px; }
+
+/*文件夹打开*/
+.tree-folder-open { background-position: -20px -18px; }
+
+/*文件夹*/
+.tree-folder-file { background-position: -40px -18px; }
+
+/*鼠标移动上*/
+.xgui-treegrid .row-alt { background-color: #f4f7fe; }
+
+/*行被选中了*/
+.xgui-treegrid .row-selected { background-color: #e6edfe; }
+
+/*缩进*/
+.tree-indent { display: inline-block; width: 16px; height: 18px; vertical-align: middle; }
+
+
+/*datebox日期插件*/
+.xgui-datebox-d { width: 230px; border-radius: 4px; padding: 6px; }
+/*头部*/
+.xgui-datebox-header { height: 30px; border-radius: 4px; border: 1px solid #aaaaaa; position: relative; background: url(img/xgui-datebox-header.jpg) repeat-x; }
+/*上一月 下一月*/
+.xgui-datebox-prev, .xgui-datebox-next { width: 24px; height: 24px; display: block; position: absolute; }
+
+.xgui-datebox-prev { left: 3px; top: 3px; }
+
+.xgui-datebox-next { right: 3px; top: 3px; }
+/*左右图标*/
+.xgui-datebox-prev-icon, .xgui-datebox-next-icon { width: 16px; height: 16px; display: block; text-indent: -9999px; position: absolute; cursor: pointer; left: 50%; top: 50%; margin-left: -8px; margin-top: -8px; }
+
+.xgui-datebox-prev-icon { background: url(img/xgui-datebox-prev-icon.png) no-repeat 2px 2px; }
+
+.xgui-datebox-next-icon { background: url(img/xgui-datebox-next-icon.png) no-repeat 2px 2px; }
+/*月份 月份下拉框*/
+.xgui-datebox-title { margin: 3px 40px; }
+/*主体*/
+.xgui-datebox-body { width: 100%; }
+
+.xgui-datebox-body th { font-weight: bold; padding: 8px 2px; text-align: center; }
+
+.xgui-datebox-body td { padding: 1px; }
+/*单元格*/
+.xgui-datebox-default { display: block; font-size: 13px; text-align: right; padding: 0 2px; height: 20px; line-height: 20px; border: 1px solid #d3d3d3; background: url(img/xgui-datebox-default.jpg) repeat-x; }
+
+a.xgui-datebox-default:hover { text-decoration: none; }
+
+/*hover时*/
+.xgui-datebox-hover { border: 1px solid #949494; }
+/*选中时*/
+.xgui-datebox-select { border: 1px solid #949494; background: none; }
+/*高亮*/
+.xgui-datebox-highlight { border: 1px solid #6a9bfb; background: none; }
+
+/*底部*/
+.xgui-datebox-bottom { height: 32px; margin-top: 10px; padding-top: 10px; border-top: 1px solid #dcdbdb; }
+
+.xgui-datebox-date-time { border: none; margin: 0; height: 28px; padding: 0; }
+
+.xgui-datebox-time { float: left; }
+
+.xgui-datebox-time .combo { padding: 2px; }
+
+.xgui-datebox-time .combo-text { float: left; width: 76px; padding: 0px; height: 22px; line-height: 22px; font-family: 'microsoft yahei',Verdana,"\u5fae\u8f6f\u96c5\u9ed1","\5b8b\4f53",Arial; }
+
+.xgui-datebox-time .combo-text span { float: left; }
+/*时间*/
+.xgui-datebox-time .combo-text em { float: left; margin-top: 4px; width: 20px; padding: 0; border: none; text-align: center; height: 16px; line-height: 16px; overflow: hidden; outline: none; }
+
+.xgui-datebox-time .combo-text i { float: left; width: 2px; font-style: normal; text-align: center; }
+
+/*时间被选中*/
+.xgui-datebox-time .combo-text .time-select { }
+
+/*图标按钮*/
+.xgui-datebox-time-arrow { background-color: #E0ECFF; display: inline-block; overflow: hidden; vertical-align: top; margin: 0; padding: 0; opacity: 1.0; filter: alpha(opacity=100); width: 18px; background-position: center center; cursor: pointer; width: 18px; height: 22px; }
+/*按钮*/
+.xgui-datebox-time-arrow a { opacity: 0.6; filter: alpha(opacity=60); display: block; font-size: 1px; width: 18px; height: 10px; width: 100%; height: 50%; color: #444; outline-style: none; background: url('img/xgui-spinner-arrows.png') no-repeat; }
+
+.xgui-datebox-time-arrow a:hover { opacity: 1; filter: alpha(opacity=100); }
+/*上*/
+.xgui-datebox-time-arrow .spinner-arrow-up { background-position: 1px center; }
+/*下*/
+.xgui-datebox-time-arrow .spinner-arrow-down { background-position: -15px center; }
+
+/*操作按钮*/
+.xgui-datebox-btn { float: right; }
+
+.xgui-datebox-btn span { border: 1px solid #c5c5c5; background: #f6f6f6; float: left; border-radius: 2px; cursor: pointer; margin-left: 8px; height: 26px; line-height: 26px; padding: 0 12px; }
+
+.xgui-datebox-btn span:hover { background: #ededed; }
+
+
+
+
+/**************验证****************/
+.xgui-validatebox { padding: 2px; line-height: 16px; height: 16px; _height: 14px; _line-height: 14px; font-size: 12px; border-style: solid; border-width: 1px; border-color: #a2bac0 #b8d0d6 #b8d0d6 #a2bac0; background-color: #FFF; }
+
+input.readonly, textarea.readonly { border-color: #9eabb3 #d5dbdf #d5dbdf #9eabb3; background-color: #F6F6F6; }
+
+input.error, textarea.error { border-color: #F80C11 #FB7E81 #FB7E81 #F80C11; }
+
+/*验证提示信息*/
+.xgui-validatebox-tip { position: absolute; width: 200px; height: auto; z-index: 9999; }
+/*提示内容*/
+.xgui-validatebox-tip-con { position: absolute; top: 0px; left: 10px; padding: 3px 5px; border: 1px solid #CC9933; background: #FFFFCC; z-index: 9999; font-size: 12px; }
+/*提示图标*/
+.xgui-validatebox-tip-icon { width: 10px; height: 22px; position: absolute; left: 1px; top: 0px; z-index: 9999; background: url(img/validatebox_icon.gif) no-repeat 0 1px; }
+
+/*验证提示信息2 Static模式*/
+.xgui-validatebox-tip2 { position: absolute; z-index: 5555; }
+/*提示图标*/
+.xgui-validatebox-tip2-icon { width: 16px; height: 20px; overflow: hidden; margin-right: 3px; display: inline-block; vertical-align: -8px; _vertical-align: -6px; background: url(img/icon-warn.png) no-repeat; _background: url(img/icon-warn.gif) no-repeat; }
+/*成功图片*/
+.xgui-validatebox-tip2 .success { background-position: -71px 0; }
+/*失败图片*/
+.xgui-validatebox-tip2 .error { background-position: -71px -38px; _border: none; }
+/*警告图标*/
+.xgui-validatebox-tip2 .warn { background-position: -71px -76px; }
+/*消息图标*/
+.xgui-validatebox-tip2 .info { background-position: -71px -152px; }
+/*问号图标*/
+.xgui-validatebox-tip2 .ask { background-position: -71px -114px; }
+/*正在加载图标*/
+.xgui-validatebox-tip2 .loading { background: url(img/loading-small.gif) no-repeat left center; }
+
+
+
+/**************combo样式、panel样式****************/
+.combo { display: inline-block; white-space: nowrap; font-size: 12px; line-height: normal; vertical-align: bottom; border: 1px solid #d1d1d1; border-radius: 2px; background-color: white; }
+
+.combo-text { font-size: 12px; border: 0px; line-height: 16px; height: 16px; _height: 14px; _line-height: 14px; padding: 2px; padding-right: 0; }
+
+.combo-arrow { background: url(img/icon-arror.jpg) no-repeat center center; width: 20px; height: 20px; overflow: hidden; display: inline-block; vertical-align: top; cursor: pointer; opacity: 0.8; filter: alpha(opacity=80); }
+/*日期按钮*/
+.datebox .combo-arrow { background: url(img/datebox_arrow.jpg) no-repeat center center; }
+/*搜索按钮*/
+.searchbox .combo-arrow { background: url(img/searchbox_arrow.jpg) no-repeat center center; }
+
+.combo-arrow-hover { opacity: 1; filter: alpha(opacity=100); }
+
+.panel { position: absolute; z-index: 9300; }
+
+.combo-panel { overflow: auto; border: 1px solid #d1d1d1; background-color: white; }
+
+.combobox-item, .searchbox-item { cursor: default; line-height: 22px; height: 22px; overflow: hidden; font-size: 12px; padding-left: 2px; }
+
+.combobox-item-hover, .xgui-tree-hover { background-color: #eefcbf; }
+
+.combobox-item-select, .xgui-tree-select, .searchbox-item-hover { background-color: #d0ec6e; }
+/*树*/
+.xgui-tree-node { cursor: default; height: 20px; overflow: hidden; font-size: 12px; padding-left: 2px; }
+/*复选框*/
+.tree-check input { vertical-align: middle; }
+
+
+/**************combogrid样式****************/
+
+/*表头*/
+.combo-panel .xgui-datagrid-title { border: 0; border-bottom: 1px solid #dcdbdb; height: 25px; line-height: 25px; }
+
+.combo-panel .xgui-datagrid-body { border: 0; }
+/*行*/
+.combo-panel .xgui-datagrid-row { height: 25px; }
+
+
+/**************commentbox评论插件****************/
+.xgui-comment-box { }
+
+.xgui-comment-box .comment-content { position: relative; zoom: 1; }
+/*文本*/
+.xgui-comment-box .comment-text { outline: none; min-height: 34px; _height: 34px; padding: 3px 3px 22px 3px; border: 1px solid #DADADA; background-color: white; box-shadow: 0 1px 2px #e9e9e9 inset; color: #444444; font-size: 1em; line-height: 1.6; word-wrap: break-word; cursor: text; font-family: "Helvetica Neue",\5FAE\8F6F\96C5\9ED1,Tohoma; }
+/*表情*/
+.xgui-comment-box .comment-text .emoticon { display: inline-block; vertical-align: -6px; }
+/*数字*/
+.xgui-comment-box .comment-number { position: absolute; right: 5px; bottom: 5px; width: 70px; height: 20px; font: 14px/20px Georgia,Tahoma,Arial; text-align: right; color: #9B9B9B; }
+/*底部*/
+.xgui-comment-box .comment-footer { margin-top: 5px; }
+/*工具栏*/
+.xgui-comment-box .comment-toolbar { float: left; padding-top: 6px; }
+/*工具项*/
+.xgui-comment-box .toolbar-item { margin-right: 8px; cursor: pointer; text-decoration: none; color: #9B9B9B; font-size: 14px; }
+
+.xgui-comment-box .toolbar-item:hover { text-decoration: none; }
+/*工具栏图标*/
+.xgui-comment-box .toolbar-icon { display: inline-block; width: 16px; height: 16px; overflow: hidden; cursor: pointer; vertical-align: bottom; background: url(img/smeil.jpg) no-repeat; margin-right: 3px; }
+/*表情hover*/
+.xgui-comment-box a.item-emotion:hover .icon-emotion { background-position: 0 -18px; }
+/*操作项*/
+.xgui-comment-box .comment-opt { float: right; }
+
+/*回复某人块*/
+.xgui-comment-box .mention { vertical-align: baseline; *vertical-align: -4px; cursor: text; display: inline-block; border: 0 none; background: none; overflow: visible; padding: 0; margin-right: 1px; color: #94998a; font-size: 1em; line-height: 20px; font-family: "Helvetica Neue",\5FAE\8F6F\96C5\9ED1,Tohoma; }
+
+/**************表情插件****************/
+.xgui-emotion { width: 395px; font-size: 12px; background: #fff; position: absolute; border: 1px solid #E8E8E8; }
+
+.xgui-emotion a { color: #9ABBC8; padding: 2px 7px; text-decoration: none; }
+
+.xgui-emotion img { width: 22px; height: 22px; border: 0; }
+
+.xgui-emotion div { margin: 5px 10px; padding: 1px; overflow: hidden; }
+/*头部*/
+.xgui-emotion .xgui-emotion-header { color: #ccc; height: 23px; color: #9ABBC8; overflow: hidden; }
+/*tab*/
+.xgui-emotion .category-tab { float: left; }
+
+.xgui-emotion .category-tab a { display: inline-block; }
+
+.xgui-emotion .category-tab a：hover { text-decoration: underline; }
+/*当前项*/
+.xgui-emotion .category-tab .current { cursor: default; background: #F0F0F0; -moz-border-radius: 3px; -webkit-border-radius: 3px; }
+/*分类分页*/
+.xgui-emotion .category-page { float: right; }
+/*上一页与下一页*/
+.xgui-emotion .category-page a { margin-left: 3px; background: #eee; }
+
+/*表情内容*/
+.xgui-emotion .xgui-emotion-container { padding: 1px; overflow: hidden; }
+/*表情项*/
+.xgui-emotion .emotion-item { float: left; width: 26px; height: 22px; text-align: center; padding: 4px 2px; margin: -1px 0 0 -1px; border: 1px solid #e8e8e8; }
+
+.xgui-emotion .emotion-item:hover { z-index: 2; position: relative; border: 1px solid #0095cd; }
+/*分页*/
+.xgui-emotion .xgui-emotion-page { text-align: right; }
+
+.xgui-emotion .xgui-emotion-page a { margin-left: 3px; color: #0078B6; background-color: #f3f3f3; }
+
+.xgui-emotion .xgui-emotion-page a:hover { background-color: #e7e7e7; }
+/*当前项*/
+.xgui-emotion .xgui-emotion-page a.current { color: #666; background-color: #fff; }
+
+
+
+/**************input-container文本容器插件****************/
+.xgui-input-container { position: relative; line-height: normal; display: inline-block; zoom: 1; }
+
+.xgui-input-container .input-wrap { position: relative; display: inline-block; border: 1px solid #ff9c00; padding: 4px; border-radius: 2px; vertical-align: middle; background-color: white; }
+
+.xgui-input-container .input-text { height: 18px; line-height: 18px; _height: 16px; border: none; background-color: transparent; padding-right: 2px; }
+
+.xgui-input-container .input-number { display: inline-block; min-width: 34px; color: #9B9B9B; text-align: right; font-family: "Microsoft Yahei",Tahoma; }
+
+.xgui-input-container .current-length { color: red; }
+
+.xgui-input-container .input-confirm { display: inline-block; height: 26px; line-height: 26px; padding: 0 10px; border-radius: 2px; text-align: center; vertical-align: middle; margin-left: 5px; }
+
+.xgui-input-container .input-confirm:hover { text-decoration: none; }
+
+.xgui-input-container .input-cancel { vertical-align: middle; color: #357b1c; margin-left: 5px; }
+
+.xgui-input-container .input-tips { position: absolute; left: 0; top: 28px; padding: 0 10px; height: 28px; line-height: 28px; background-color: #fefae6; border: 1px solid #f3e9b8; color: #5f5f5f; z-index: 10; }
+
+
+/**************divtext div文本插件****************/
+
+.xgui-divtext { width: auto; height: auto; _height: 16px; min-height: 18px; padding: 1px; cursor: text; border: 1px solid #c3c3c3; background-color: white; }
+
+/*每项item*/
+.xgui-divtext .div-item { height: 16px; line-height: 16px; float: left; margin: 1px 3px 1px 0; cursor: default; color: #000; white-space: nowrap; }
+
+/*hover时*/
+.xgui-divtext .div-item-hover { background-color: #E0ECF9; }
+
+/*选中时*/
+.xgui-divtext .div-item-select { color: #fff; background-color: #528BCB; }
+
+/*输入框*/
+.xgui-divtext .div-input { width: 30px; float: left; border: none; overflow: hidden; width: 13px; margin: 1px -13px 1px 0; height: 16px; cursor: text; font-size: 12px; }
+
+/*输入框input*/
+.xgui-divtext .div-input .js-input { border: none; outline: none; -webkit-appearance: none; width: 100%; background: none; }
+
+.xgui-divtext .div-input .js-text { display: none; overflow: auto; white-space: nowrap; font-family: Tahoma; font-size: 12px; font-weight: normal; line-height: normal; word-spacing: 0px; }
+
+/*下拉列表*/
+.xgui-divtext-list { position: absolute; border-radius: 4px; border: 1px solid #c3c3c3; background-color: white; padding: 2px; z-index: 100; width: 300px; }
+
+/*项*/
+.xgui-divtext-list .list-item { width: 100%; line-height: 1.5; border-radius: 2px; }
+
+.xgui-divtext-list .list-text { display: block; padding: 5px; color: #333333; line-height: 1.5em; text-decoration: none; }
+
+.xgui-divtext-list .list-item-hover { text-decoration: none; background-color: #fdf5ce; border: 1px solid #fbcb09; cursor: pointer; margin: -1px; }
+
+.xgui-divtext-list .list-item-hover .list-text { color: #ca744a; text-decoration: none; }
+
+
+/**************divscroll 滚动条插件****************/
+
+.xgui-scroll { z-index: 10; display: none; }
+
+/*滚动条外框*/
+.xgui-scroll-bar { position: absolute; top: 0; right: 0; width: 8px; height: 200px; border-radius: 8px; background-color: #9e9e9e; }
+
+/*拖动滚动条*/
+.xgui-scroll-bar-dragger { position: absolute; left: 0; top: 0; width: 8px; height: 30px; background: #3a3a3a; cursor: pointer; border-radius: 8px; opacity: 0.8; }
+
+
+/**************gallery图片浏览插件****************/
+
+/*图片浏览插件*/
+.gallery .gallery-close a,
+/*上一张箭头*/
+.gallery .photo-prev,
+/*下一张箭头*/
+.gallery .photo-next,
+/*上一张（缩略图）*/
+.gallery .thumb-prev span,
+/*下一张（缩略图）*/
+.gallery .thumb-next span { background: url(img/gallery-icons.png) no-repeat; /*_background: url(img/Gallery.gif) no-repeat;*/ }
+
+.gallery { width: 100%; height: 100%; position: absolute; left: 0; top: 40px; padding-top: 20px; z-index: 9999; }
+/*mask遮罩*/
+.gallery .gallery-mask { width: 100%; height: 100%; position: fixed; left: 0; top: 0; background-color: black; filter: alpha(opacity=90); opacity: 0.9; _width: expression(eval(document.body.clientWidth>document.documentElement.clientWidth ? document.body.clientWidth:document.documentElement.clientWidth)); _height: expression(eval(document.body.clientHeight>document.documentElement.clientHeight?document.body.clientHeight:document.documentElement.clientHeight)); _position: absolute; }
+/*图片主内容区*/
+.gallery .gallery-container { width: 1024px; height: 100%; margin: 0 auto; position: relative; }
+/*关闭图标*/
+.gallery .gallery-close { width: 30px; height: 30px; position: absolute; right: -12px; top: -12px; z-index: 100; }
+
+.gallery .gallery-close a { display: block; height: 30px; width: 30px; background-position: 0 0; }
+
+.gallery .gallery-close a:hover { background-position: -31px 0; }
+
+/*画布*/
+.gallery .photo-wrapper { width: 724px; height: 100%; background-color: black; position: relative; cursor: pointer; overflow: hidden; /*阻止火狐选中此项*/ -moz-user-select: none; }
+/*上一张与下一张*/
+.gallery .photo-wrapper .photo-prev, .gallery .photo-wrapper .photo-next { width: 27px; height: 44px; position: absolute; display: none; }
+/*上一张*/
+.gallery .photo-wrapper .photo-prev { left: 10px; top: 45%; background-position: 0 -32px; }
+/*hover时上一张箭头*/
+.gallery .photo-wrapper .photo-prev-hover { background-position: -29px -32px; }
+
+/*下一张*/
+.gallery .photo-wrapper .photo-next { right: 10px; top: 45%; background-position: 0 -77px; }
+/*hover时下一张箭头*/
+.gallery .photo-wrapper .photo-next-hover { background-position: -29px -77px; }
+/*loading*/
+.gallery .photo-wrapper .photo-loading { width: 32px; height: 32px; position: absolute; left: 50%; top: 50%; margin-top: -16px; margin-left: -16px; background: url(img/gallery-loading.gif) no-repeat; }
+/*主图片*/
+.gallery .photo-wrapper .photo-img { }
+/*内容信息*/
+.gallery .gallery-info { width: 300px; height: 100%; background-color: white; position: absolute; top: 0; right: 0; overflow: hidden; }
+/*照片详情*/
+.gallery .photo-info { margin: 20px 20px 10px 20px; }
+/*发布者信息*/
+.gallery .photo-info .user-info { }
+
+.gallery .photo-info .user-avatar { float: left; }
+/*用户描述*/
+.gallery .photo-info .user-desc { float: left; margin-left: 10px; line-height: 20px; }
+
+.gallery .photo-info .user-name a { color: #357b1c; }
+
+.gallery .photo-info .publish-time { color: #9b9b9b; }
+/*照片描述*/
+.gallery .photo-info .photo-desc { line-height: 20px; margin-top: 4px; color: #636363; }
+/*操作*/
+.gallery .photo-opt { height: 30px; padding: 0 20px; color: #505050; box-shadow: 0 2px 3px #e3e3e3; background-color: #ffffff; border-bottom: 1px solid #dcdcdc; }
+
+.gallery .photo-opt a { display: inline-block; height: 30px; line-height: 30px; padding: 0 20px; color: #357b1c; }
+/*评论区*/
+.gallery .comment-wrap { margin: 10px 20px; }
+/*赞*/
+.gallery .user-praise { line-height: 22px; margin-bottom: 10px; }
+
+.gallery .user-praise a { color: #357b1c; }
+/*评论列表*/
+.gallery .comment-list { margin-bottom: 10px; }
+
+.gallery .comment-list .comment-item { margin-bottom: 10px; }
+
+.gallery .comment-list .user-avatar { float: left; }
+
+.gallery .comment-list .comment-info { width: 220px; float: left; margin-left: 8px; line-height: 16px; }
+
+.gallery .comment-list .user-name { color: #357b1c; }
+
+.gallery .comment-list .comment-info { color: #636363; }
+
+/*评论框*/
+.gallery .comment-tip-input { height: 40px; padding: 4px; border: 1px solid #DADADA; background-color: white; color: #444444; outline: none; cursor: text; }
+/*缩略图*/
+.gallery .gallery-thumb { width: 944px; margin: 0 auto; position: relative; padding: 0 40px; margin-top: 10px; }
+
+.gallery .gallery-thumb .thumb-list { width: 944px; height: 50px; position: relative; overflow: hidden; }
+
+/*缩略图项*/
+.gallery .gallery-thumb .thumb-item { width: 50px; height: 50px; float: left; margin-right: 5px; position: relative; background-color: black; }
+
+.gallery .gallery-thumb .thumb-item a { display: block; width: 50px; height: 50px; overflow: hidden; filter: Alpha(Opacity=60); opacity: .6; }
+/*hover时样式*/
+.gallery .gallery-thumb .item-hover a { filter: Alpha(Opacity=100); opacity: 1; }
+/*focus时样式*/
+.gallery .gallery-thumb .item-focus a { width: 40px; height: 40px; border: 5px solid #73B4E0; filter: Alpha(Opacity=100); opacity: 1; }
+/*缩略图上一页与下一页*/
+.gallery .gallery-thumb .thumb-prev, .gallery .gallery-thumb .thumb-next { height: 42px; width: 25px; position: absolute; background: #080808; border-radius: 4px; filter: Alpha(Opacity=80); opacity: .8; cursor: pointer; display: none; }
+
+.gallery .gallery-thumb .thumb-prev span, .gallery .gallery-thumb .thumb-next span { display: block; height: 21px; width: 13px; margin: 10px 6px 0; }
+/*上一页*/
+.gallery .gallery-thumb .thumb-prev { left: 0; top: 4px; }
+/*下一页*/
+.gallery .gallery-thumb .thumb-next { right: 0; top: 4px; }
+
+.gallery .gallery-thumb .thumb-prev span { background-position: 0 -124px; }
+
+.gallery .gallery-thumb .thumb-next span { background-position: 0 -146px; }
+
+
+/**************ui-info提示信息****************/
+.ui-info { background-color: #fdf9f1; border: 1px solid #F7E3B3; color: #666; font-size: 12px; line-height: 24px; *height: 24px; padding: 4px 10px 4px 32px; position: relative; }
+
+/*图标*/
+.ui-info .icons { width: 16px; height: 20px; overflow: hidden; position: absolute; left: 10px; top: 6px; background: url(img/icon-warn.png) no-repeat; _background: url(img/icon-warn.gif) no-repeat; }
+
+/*成功图片*/
+.ui-info .icons.success { background-position: -71px 0; }
+/*失败图片*/
+.ui-info .icons.error { background-position: -71px -38px; }
+/*警告图标*/
+.ui-info .icons.warn { background-position: -71px -76px; }
+/*消息图标*/
+.ui-info .icons.info { background-position: -71px -152px; }
+/*问号图标*/
+.ui-info .icons.ask { background-position: -71px -114px; }
+
+.ui-info a { font-size: 12px; color: #ff6000; text-decoration: none; }
+
+.ui-info a:hover { text-decoration: underline; }
