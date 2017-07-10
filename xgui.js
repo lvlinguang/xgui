@@ -1,13 +1,13 @@
-﻿
-
 /**
  * jQuery xgui 1.2.6
  * 
  * made by：lv
  *
  * QQ:635074566
- *
- * 仅供个人学习使用
+ *  
+ * https://github.com/lvlinguang/xgui
+ * 
+ * 仅供个人学习使用，不得用于商业
  * 
  * 2017年
  */
@@ -13143,61 +13143,4 @@ var xgui = {
         var RatioW = $(img).width() / parentW;
 
         //图片高比例
-        var RatioH = $(img).height() / parentH;
-
-        //图片宽度
-        var imgw = $(img).width();
-
-        //图片高度
-        var imgh = $(img).height();
-
-        //margin-top
-        var mt = 0;
-
-        //margin-left
-        var ml = 0;
-
-        //图片大于父宽度，或高度大于父高度
-        if (imgw > parentW || imgh > parentH) {
-
-            //按宽缩小
-            if (RatioW > RatioH) {
-
-                //图片宽
-                imgw = parentW;
-
-                //图片高度
-                imgh = imgh / RatioW;
-
-            }
-                //按高缩小
-            else {
-                imgw = imgw / RatioH;
-
-                imgh = parentH;
-            }
-
-        }
-
-        mt = (parentH - imgh) / 2;
-
-        ml = (parentW - imgw) / 2;
-
-        $(img).css({ "width": imgw, "height": imgh, "margin-left": ml, "margin-top": mt });
-    },
-    //检测ie6版本
-    isie6: function () {
-
-        //插件合法性使用验证
-        if (!$.parser.validate()) {
-            return;
-        }
-
-        if ($.browser.msie && ($.browser.version == "6.0") && !$.support.style) {
-            return true;
-        }
-        return false;
-
-    }
-
-}
+        var RatioH = $(img).height() / 
