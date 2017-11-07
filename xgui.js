@@ -1,7 +1,7 @@
 /**
  * jQuery xgui 1.2.6
  * 
- * made by：lv
+ * made by：lvlinguang
  *
  * QQ:635074566
  *  
@@ -4960,7 +4960,7 @@ var xguimask = "<div class=\"xgui-mask\"></div>";
 *   combogrid — jQuery XGUI
 *   made by：lv
 *   Production in：2015-2-5
-*   Last updated：2015-10-28
+*   Last updated：2017-11-07
 */
 (function ($) {
 
@@ -5352,7 +5352,7 @@ var xguimask = "<div class=\"xgui-mask\"></div>";
     }
 
     //查询
-    function doQuery(target, q) {
+    function doQuery(target, q, event) {
 
         var combo = $(target).combo('combo');
 
@@ -5369,6 +5369,9 @@ var xguimask = "<div class=\"xgui-mask\"></div>";
             //查询完成事件
             queryEvent();
 
+            if (event) {
+                event();
+            }
         }
             //远程检索
         else {
@@ -5396,6 +5399,10 @@ var xguimask = "<div class=\"xgui-mask\"></div>";
 
                 //查询完成事件
                 queryEvent();
+
+                if (event) {
+                    event();
+                }
 
             });
         }
@@ -5719,6 +5726,60 @@ var xguimask = "<div class=\"xgui-mask\"></div>";
                         }
                     }
                 }
+            });
+        },
+        //设置数据
+        setData: function (target, param) {
+
+            return target.each(function () {
+
+                var opts = $.data(this, 'combogrid').options;
+
+                var combo = $(this).combo('combo');
+
+                var panel = $(this).combo('panel');
+
+                //值
+                var pvalue = param[opts.idField];
+                //文本
+                var ptext = param[opts.textField];
+
+                //对象
+                var t = this;
+
+                //先清除
+                $(target).combogrid("clear");
+
+                if (pvalue == "" || ptext == "") {
+
+                    return;
+                }
+
+                //检索
+                doQuery(this, ptext, function () {
+
+                    var data = $.data(t, "combogrid").data;
+
+                    if (data) {
+
+                        var value = null;
+
+                        for (i = 0; i < data.length; i++) {
+
+                            if (data[i][opts.idField] == pvalue) {
+
+                                value = data[i];
+                                break;
+                            }
+                        }
+
+                        if (value) {
+
+                            //验证
+                            checkData(t);
+                        }
+                    }
+                });
             });
         },
         //清除
@@ -7590,7 +7651,7 @@ var xguimask = "<div class=\"xgui-mask\"></div>";
 *   datebox — jQuery XGUI
 *   made by：lv
 *   Production in：2013-11-13
-*   Last updated：2016-12-06
+*   Last updated：2017-11-04
 */
 (function ($) {
 
@@ -8506,75 +8567,50 @@ var xguimask = "<div class=\"xgui-mask\"></div>";
                     return;
                 }
 
-                var date = param.replace("-", "/");
+                try {
 
-                //时间
-                if (DateType(opts.format) == 3) {
+                    var date = param.replace("-", "/");
 
-                    //当前时间
-                    var curdate = Dateformat(new Date(), "yyyy/MM/dd");
+                    //时间
+                    if (DateType(opts.format) == 3) {
 
-                    date = new Date((curdate + " " + date));
-                }
-                    //日期
-                else {
+                        //当前时间
+                        var curdate = Dateformat(new Date(), "yyyy/MM/dd");
 
-                    date = new Date(date);
-                }
+                        date = new Date((curdate + " " + date));
+                    }
+                        //日期
+                    else {
 
-                //不是日期类型
-                if (date == "Invalid Date" || date == "NaN") {
-
-                    return;
-                }
-
-                var o =
-                    {
-                        "Y": date.getFullYear(),
-                        //月
-                        "M": date.getMonth(),
-                        //天
-                        "d": date.getDate(),
-                        //小时
-                        "h": date.getHours(),
-                        //分钟
-                        "m": date.getMinutes(),
-                        //秒数
-                        "s": date.getSeconds()
+                        date = new Date(date);
                     }
 
-                //设置值
-                combo.find(".combo-text,.combo-value").val(param);
+                    //不是日期类型
+                    if (date == "Invalid Date" || date == "NaN") {
 
-                //时间
-                if (DateType(opts.format) == 3) {
+                        return;
+                    }
 
-                    //小时
-                    panel.find(".combo-text em:eq(0)").html(ConNumber(o.h));
+                    var o =
+                        {
+                            "Y": date.getFullYear(),
+                            //月
+                            "M": date.getMonth(),
+                            //天
+                            "d": date.getDate(),
+                            //小时
+                            "h": date.getHours(),
+                            //分钟
+                            "m": date.getMinutes(),
+                            //秒数
+                            "s": date.getSeconds()
+                        }
 
-                    //分钟
-                    panel.find(".combo-text em:eq(1)").html(ConNumber(o.m));
+                    //设置值
+                    combo.find(".combo-text,.combo-value").val(param);
 
-                    //秒数
-                    panel.find(".combo-text em:eq(2)").html(ConNumber(o.s));
-                }
-                    //日期
-                else {
-
-                    //重设年份下拉表
-                    CreateYear(this, o.Y);
-
-                    //月下拉列表
-                    panel.find(".xgui-datebox-month").val(o.M);
-
-                    //设置表格
-                    CreateDay(this, o.Y, o.M);
-
-                    //设置选中
-                    panel.find("td[data-year=" + ConNumber(o.Y) + "][data-month=" + ConNumber(o.M) + "][data-day=" + ConNumber(o.d) + "]").children("a").addClass("xgui-datebox-select");
-
-                    //日期型带时间
-                    if (DateType(opts.format) == 2) {
+                    //时间
+                    if (DateType(opts.format) == 3) {
 
                         //小时
                         panel.find(".combo-text em:eq(0)").html(ConNumber(o.h));
@@ -8584,10 +8620,41 @@ var xguimask = "<div class=\"xgui-mask\"></div>";
 
                         //秒数
                         panel.find(".combo-text em:eq(2)").html(ConNumber(o.s));
-
                     }
-                }
+                        //日期
+                    else {
 
+                        //重设年份下拉表
+                        CreateYear(this, o.Y);
+
+                        //月下拉列表
+                        panel.find(".xgui-datebox-month").val(o.M);
+
+                        //设置表格
+                        CreateDay(this, o.Y, o.M);
+
+                        //设置选中
+                        panel.find("td[data-year=" + ConNumber(o.Y) + "][data-month=" + ConNumber(o.M) + "][data-day=" + ConNumber(o.d) + "]").children("a").addClass("xgui-datebox-select");
+
+                        //日期型带时间
+                        if (DateType(opts.format) == 2) {
+
+                            //小时
+                            panel.find(".combo-text em:eq(0)").html(ConNumber(o.h));
+
+                            //分钟
+                            panel.find(".combo-text em:eq(1)").html(ConNumber(o.m));
+
+                            //秒数
+                            panel.find(".combo-text em:eq(2)").html(ConNumber(o.s));
+
+                        }
+                    }
+
+                } catch (e) {
+
+                    return;
+                }
             });
         },
         //得到值
@@ -13143,4 +13210,60 @@ var xgui = {
         var RatioW = $(img).width() / parentW;
 
         //图片高比例
-        var RatioH = $(img).height() / 
+        var RatioH = $(img).height() / parentH;
+
+        //图片宽度
+        var imgw = $(img).width();
+
+        //图片高度
+        var imgh = $(img).height();
+
+        //margin-top
+        var mt = 0;
+
+        //margin-left
+        var ml = 0;
+
+        //图片大于父宽度，或高度大于父高度
+        if (imgw > parentW || imgh > parentH) {
+
+            //按宽缩小
+            if (RatioW > RatioH) {
+
+                //图片宽
+                imgw = parentW;
+
+                //图片高度
+                imgh = imgh / RatioW;
+
+            }
+                //按高缩小
+            else {
+                imgw = imgw / RatioH;
+
+                imgh = parentH;
+            }
+
+        }
+
+        mt = (parentH - imgh) / 2;
+
+        ml = (parentW - imgw) / 2;
+
+        $(img).css({ "width": imgw, "height": imgh, "margin-left": ml, "margin-top": mt });
+    },
+    //检测ie6版本
+    isie6: function () {
+
+        //插件合法性使用验证
+        if (!$.parser.validate()) {
+            return;
+        }
+
+        if ($.browser.msie && ($.browser.version == "6.0") && !$.support.style) {
+            return true;
+        }
+        return false;
+
+    }
+}
